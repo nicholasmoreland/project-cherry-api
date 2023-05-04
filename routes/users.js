@@ -14,14 +14,14 @@ router.get('/', async (req, res) => {
 });
 
 /* Request to GET one user */
-router.get('/:name', getUser, async (req, res) => {
+router.get('/:username', getUser, async (req, res) => {
     res.json(res.user);
 });
 
 async function getUser(req, res, next) {
     let user;
     try {
-        user = await User.findOne(req.params.name);
+        user = await User.findOne({ username: req.params.username });
 
         if (user == null) {
             return res.status(404).json({ message: 'Cannot find user'});
