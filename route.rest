@@ -3,3 +3,7 @@ GET http://localhost:3000/users
 ###
 
 GET http://localhost:3000/users/FaultyRam
+
+###
+
+GET http://localhost:3000/users/Holden
